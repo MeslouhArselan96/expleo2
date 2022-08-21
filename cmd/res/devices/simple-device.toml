@@ -1,0 +1,14 @@
+[[DeviceList]]
+  Name = "Battery"
+  ProfileName = "Battery-profile"
+  Description = "NASA validation dataset of the battery data"
+  Labels = [ "" ]
+  [DeviceList.Protocols]
+  [DeviceList.Protocols.other]
+    Address = "simple01"
+    Port = "300"
+  [[DeviceList.AutoEvents]]
+    Interval = "30s"
+    OnChange = false
+    SourceName = "battery-data" 
+  

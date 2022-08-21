@@ -1,0 +1,96 @@
+apiVersion: "v2"
+name: "Battery-profile"
+manufacturer: "NASA"
+model: "Validation-dataset"
+labels:
+  - "NASA"
+  - "Expleo Group"
+  - "EdgeX"
+  - "Battery"
+  - "Thingboard"
+  - "IoV"
+  - "Nephido"
+  - "Predictive maintenance"
+  - "Abstraction layer"
+  - "End-to-end deployment"
+description: "This profile describes the NASA dataset resources"
+deviceResources:
+  -
+    name: "Cycle"
+    isHidden: false
+    description: "Discharge cycle Id"
+    properties:
+        valueType: "Int64"
+        readWrite: "RW"
+        units: "No unit" 
+  -
+    name: "Voltage_measured"
+    isHidden: false
+    description: "measure of the ouptut voltage"
+    properties:
+        valueType: "Float64"
+        readWrite: "RW"
+        units: "Volts"
+  -
+    name: "Current_measured"
+    isHidden: false
+    description: "measure of the ouput current"
+    properties:
+        valueType: "Float64"
+        readWrite: "RW"
+        units: "Ampers"
+  -
+    name: "Temperature_measured"
+    isHidden: false
+    description: "measure of the surrounding temperature"
+    properties:
+        valueType: "Float64"
+        readWrite: "RW"
+        units: "Celcius"
+  -
+    name: "Voltage_load"
+    isHidden: false
+    description: "voltage measure at the load"
+    properties:
+        valueType: "Float64"
+        readWrite: "RW"
+        units: "Volts"
+  -
+    name: "Time"
+    isHidden: false
+    description: "Time of the measure in seconds"
+    properties:
+      valueType: "Float64"
+      readWrite: "RW"
+      units: "Seconds"
+  -
+    name: "Current_load"
+    isHidden: false
+    description: "Current flowing through the load"
+    properties:
+        valueType: "Float64"
+        readWrite: "RW"
+        units: "Ampers"
+  -
+    name: "Capacity"
+    isHidden: false
+    description: "Capacity of the battery"
+    properties:
+      valueType: "Float64"
+      readWrite: "RW"
+      units: "Farads"
+
+deviceCommands:
+  -
+    name: "battery-data"
+    isHidden: false
+    readWrite: "RW"
+    resourceOperations:
+      - { deviceResource: "Cycle"}
+      - { deviceResource: "Voltage_measured"}
+      - { deviceResource: "Current_measured"}
+      - { deviceResource: "Temperature_measured"}
+      - { deviceResource: "Voltage_load"}
+      - { deviceResource: "Time"}
+      - { deviceResource: "Current_load"}
+      - { deviceResource: "Capacity"}
